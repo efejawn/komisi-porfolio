@@ -1,0 +1,173 @@
+:root {
+            --primary-red: #ff4d4d;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --info-bg: #151515;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        .skills-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .skills-header {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .skills-header span {
+            color: var(--primary-red);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #252525;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary-red);
+            box-shadow: 0 15px 30px rgba(255, 77, 77, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        /* --- INFO SECTIONS (Full Page) --- */
+        .full-section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            border-top: 1px solid #222;
+        }
+
+        .content-box {
+            max-width: 900px;
+            width: 100%;
+            background: var(--info-bg);
+            padding: 60px;
+            border-radius: 30px;
+            border-left: 10px solid var(--primary-red);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 25px;
+        }
+
+        .section-text {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* --- ART GALLERY GRID --- */
+        .art-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .art-item {
+            aspect-ratio: 1 / 1;
+            background: #222;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-weight: bold;
+            border: 1px dashed #444;
+        }
+
+        /* --- BUTTONS --- */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--primary-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .content-box { padding: 30px; }
+            .section-title { font-size: 1.8rem; }
+            .skills-header { font-size: 2.5rem; }
+        }
